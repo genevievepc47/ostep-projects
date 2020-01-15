@@ -1,3 +1,4 @@
+#include <stdlib.h>
 #include <stdio.h>
 
 //git add .
@@ -18,12 +19,12 @@ int main(int argc, char *argv[])
 	}
 
 	int i;
-	for(i =2; i<= argc; i++)//loop through each file sent in
+	for(i =1; i< argc; i++)//loop through each file sent in
 	{
-		FILE *fp = fopen(argv[i]", "r");
+		FILE *fp = fopen(argv[i], "r");
 		if (fp == NULL)
 		{
-			printf("wcat:cannot open file\n");
+			printf("wcat: cannot open file\n");
 			exit(1);
 		}
 
