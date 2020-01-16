@@ -1,5 +1,8 @@
 #include <stdlib.h>
 #include <stdio.h>
+#include <string.h>
+
+void displayLines(const char* searchTerm, const char* stream);
 
 //git add .
 
@@ -9,6 +12,20 @@
 //if argc = 2, THEY ONLY ENTER ONE THING IT IS THE SEARCH TERM! USE STANDARD INPUT!!
 //if argc = 1, they entered no arguments
 
+
+void displayLines(const char* searchTerm, const char* stream)
+{
+
+	char *ret;
+	ret = strstr(stream, searchTerm);
+
+	if(ret != NULL)//if the search term is in the line
+	{
+		printf("%s", stream);
+	}
+
+//	printf("we got to the display lines function");
+}//end display lines function
 
 
 int main(int argc, char *argv[])
@@ -29,6 +46,8 @@ int main(int argc, char *argv[])
 	if(argc == 2)
 	{
 
+		const char* searchTerm = argv[1];
+
 		size_t size =10;
 		char *string;
 		int _read;
@@ -36,15 +55,14 @@ int main(int argc, char *argv[])
 		printf("Enter the text you want to search for the term in");
 		string = (char *) malloc(size);
 		_read = getline(&string, &size, stdin);
-		puts("you entered the following string:");
-		puts(string);
 
 		if(_read ==-1)
 		{
 			puts("error!");
 		}
 
-	}
+		displayLines(searchTerm, string);
+	}//end if they only entered the search term
 
         int i;
         for(i =2; i< argc; i++)//loop through each file sent in
@@ -65,20 +83,20 @@ int main(int argc, char *argv[])
 		//loop through all the lines
 		while(getline(&buffer, &bufferSize, fp) != -1)
 		{
+			const char* searchTerm = argv[1];
 
 			lineNum++;//increment line num
 
-			//LOOK FOR THE SEARCH TERM
+			displayLines(searchTerm, buffer);
 
 			//for now print out the line to make sure it is working right
-			printf("line: %s", buffer);
+			//printf("line: %s", buffer);
 		}//end while looping htorugh lines of the file
 
 		free(buffer);
 		buffer = NULL;
 
                 fclose(fp);
-		printf("dome with this file");
         }//end for each file
         exit(0);
 
