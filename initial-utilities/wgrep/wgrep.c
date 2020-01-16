@@ -54,16 +54,16 @@ int main(int argc, char *argv[])
                         exit(1);
                 }
 
-		char *buffer;
+		char *buffer = NULL;
 		size_t bufferSize =0;
 		int lineNum = 0;
-		size_t lineSize =0;
+		//size_t lineSize =0;
 
 
-		lineSize = getline(&buffer, &bufferSize, fp);//get first line
+		//lineSize = getline(&buffer, &bufferSize, fp);//get first line
 
 		//loop through all the lines
-		while(lineSize >=0)
+		while(getline(&buffer, &bufferSize, fp) != -1)
 		{
 
 			lineNum++;//increment line num
@@ -72,9 +72,15 @@ int main(int argc, char *argv[])
 
 			//for now print out the line to make sure it is working right
 			printf("line: %s", buffer);
+			//printf("line size: %zu", lineSize);
+			//lineSize = getline(&buffer, &bufferSize, fp);
 		}//end while looping htorugh lines of the file
 
+		free(buffer);
+		buffer = NULL;
+
                 fclose(fp);
+		printf("dome with this file");
         }//end for each file
         exit(0);
 
