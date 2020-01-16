@@ -6,13 +6,10 @@
 //argv[1] = the search term
 //argv[2] = the file
 
-//if argc = 2, they only entered either the file or the search term
-//try to  open it, if it opens correctly it is the file
-//if it cant open it is the search term
-
+//if argc = 2, THEY ONLY ENTER ONE THING IT IS THE SEARCH TERM! USE STANDARD INPUT!!
 //if argc = 1, they entered no arguments
 
-//NONE OF THIS CODE IS CORRECT YET
+
 
 int main(int argc, char *argv[])
 {
@@ -31,17 +28,22 @@ int main(int argc, char *argv[])
 	//check if they only entered one argument
 	if(argc == 2)
 	{
-		//check to see if it opens
-		FILE *fp = fopen(argv[1], "r");
-                if (fp == NULL)//if it cant open, then they entered a search term
-                {
-                        //wgrep should read from standard input
-			//I DONT KNOW WHAT THIS MEANS
-			//COME BACK TO
-                }
 
-		//else they entered only a file
-		//DOES THIS MEAN THE SEARCH TERM IS THE EMPTY STRING?
+		size_t size =10;
+		char *string;
+		int _read;
+
+		printf("Enter the text you want to search for the term in");
+		string = (char *) malloc(size);
+		_read = getline(&string, &size, stdin);
+		puts("you entered the following string:");
+		puts(string);
+
+		if(_read ==-1)
+		{
+			puts("error!");
+		}
+
 	}
 
         int i;
@@ -60,8 +62,6 @@ int main(int argc, char *argv[])
 		//size_t lineSize =0;
 
 
-		//lineSize = getline(&buffer, &bufferSize, fp);//get first line
-
 		//loop through all the lines
 		while(getline(&buffer, &bufferSize, fp) != -1)
 		{
@@ -72,8 +72,6 @@ int main(int argc, char *argv[])
 
 			//for now print out the line to make sure it is working right
 			printf("line: %s", buffer);
-			//printf("line size: %zu", lineSize);
-			//lineSize = getline(&buffer, &bufferSize, fp);
 		}//end while looping htorugh lines of the file
 
 		free(buffer);
