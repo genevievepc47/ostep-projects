@@ -50,23 +50,34 @@ int main(int argc, char *argv[])
 
 
 			int j =0;
-			char firstLetter = buffer[j];
+			//char firstLetter = buffer[j];
 
-			int counter =0;
-			while(buffer[j] == firstLetter)
+			//int counter =0;
+
+			while(buffer[j]!= '\n')
 			{
-				counter +=1;
-				j+=1;
+				char firstLetter = buffer[j];
+				int counter =0;
 
-			}
 
-			//add it to the file
-			//just check for now
-			printf("The number: %d", counter);
-			printf("The char: %c",firstLetter); 
 
-                        printf("%s", buffer);
-                }
+				while(buffer[j] == firstLetter)
+				{
+					counter +=1;
+					j+=1;
+
+				}
+
+				//j+=1;
+
+				//add it to the file
+				//just check for now
+				printf("The number: %d", counter);
+				printf("The char: %c",firstLetter);
+
+                         }//end while not at end of string
+                }//end for each file
+
 
                 fclose(fp);
         }//end for each file
