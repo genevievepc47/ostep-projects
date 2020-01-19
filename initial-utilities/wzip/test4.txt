@@ -1,0 +1,1 @@
+2wzip: file1[file2 ...]
