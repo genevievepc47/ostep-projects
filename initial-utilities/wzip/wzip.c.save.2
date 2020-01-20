@@ -54,45 +54,32 @@ int main(int argc, char *argv[])
 
 			//int counter =0;
 
-			while(buffer[j]!= '\n')
+			while(buffer[j]!= '\0')
 			{
 				char firstLetter = buffer[j];
 				int counter =0;
-
+				j+=1;
 
 
 				while(buffer[j] == firstLetter)
 				{
 					counter +=1;
-					j+=1;
+					//j+=1;
 
 				}
 
+				//j+=1;
 
 				//add it to the file
-				//turn the number into a string somehow
-
-				FILE *fp1 = fopen(argv[argc-1], "wb");
-				if(fp1 == NULL)
-   				{
-      					printf("Error!");
-      					exit(1);
-   				}
-
-				fwrite(&counter, sizeof(counter), 1, fp1);
-				//printf("%c",firstLetter);
-
-				 fclose(fp1);
-
-
+				//just check for now
+				printf("The number: %d", counter);
+				printf("The char: %c",firstLetter);
 
                          }//end while not at end of string
-                }//end reading through a file
+                }//end for each file
 
 
                 fclose(fp);
-		//fclose(fp1);
-		//printf("i got here");
         }//end for each file
 	exit(0);
 
