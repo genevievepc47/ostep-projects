@@ -70,8 +70,9 @@ int main(int argc, char *argv[])
 
 
 				//add it to the file
-				//turn the number into a string somehow
 
+
+				//open the second file(that we want to write to)
 				FILE *fp1 = fopen(argv[argc-1], "wb");
 				if(fp1 == NULL)
    				{
