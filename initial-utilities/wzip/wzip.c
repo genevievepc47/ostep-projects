@@ -71,7 +71,7 @@ int main(int argc, char *argv[])
 
 
 
-
+				//printf("%d", counter);
 				fwrite(&counter, sizeof(counter), 1, stdout);
 				printf("%c",firstLetter);
 
