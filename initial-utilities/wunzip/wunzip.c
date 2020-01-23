@@ -38,7 +38,28 @@ int main(int argc, char *argv[])
           	fread(&repeatNum, sizeof(int), 1, fp);
 		printf("%d\n", repeatNum);
 
-		//if its binary, size of int, 1, fp
+
+
+		int letter;
+		fread(&letter, sizeof(int), 1, fp);
+		printf("%d\n", letter);
+
+		int letter2;
+                fread(&letter2, sizeof(int), 1, fp);
+                printf("%d\n", letter2);
+
+
+		int repeatNum2;
+                fread(&repeatNum2, sizeof(int), 1, fp);
+                printf("%d\n", repeatNum2);
+
+		int repeatNum3;
+                fread(&repeatNum3, sizeof(int), 1, fp);
+                printf("%d\n", repeatNum3);
+
+
+
+	//if its binary, size of int, 1, fp
 		//printf("%lu\n",sizeof(fp));
 
 
