@@ -5,12 +5,19 @@
 //git commit -m "commit message"
 //pit push
 
-
+//fiorejp@gmail.com
 int main(int argc, char *argv[])
 {
+//int count;
+//size_t bytesRead;
+
+//while(bytesRead = fread(&count, sizeof(int), 1, stin)) >0)
+//{
+//	char c = fread(&c...)//OR
+//	c = fgetc()
+//}
 
 
-//argc needs to be 4 to make sure they entered everything
 //argv[1] is the file that needs to be compressed
 //argv[util u hit greater than sign] all these needs to be compressed
 //argv[argc-1] is the output file
@@ -47,7 +54,7 @@ int main(int argc, char *argv[])
 			//write it to the file(without a new line)
 
 
-			int j =0;
+			int j =0;//for looping thorugh the whole word
 			//char firstLetter = buffer[j];
 
 			//int counter =0;
