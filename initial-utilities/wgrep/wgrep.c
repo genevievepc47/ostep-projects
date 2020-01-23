@@ -36,7 +36,7 @@ int main(int argc, char *argv[])
 
 
         //check if they entered anything
-        if(argc == 1)//if they did not enter anything
+        if(argc == 1 || argc>3)//if they did not enter anything
         {
                 printf("wgrep: searchterm [file...]\n");
                 exit(0);
