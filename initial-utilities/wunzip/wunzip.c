@@ -41,8 +41,8 @@ int main(int argc, char *argv[])
 			while((bytesRead = fread(&count, sizeof(int), 1, fp)) >0)
 			{
         			char c = fgetc(fp);
-        			printf("%d\n", count);
-				printf("%c\n", c);
+        			printf("%d", count);
+				printf("%c", c);
 
 				//c = fgetc()
 			}
