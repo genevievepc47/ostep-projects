@@ -30,7 +30,7 @@ int main(int argc, char *argv[])
                 FILE *fp = fopen(argv[i], "r");
                 if (fp == NULL)
                 {
-                        printf("wcat: cannot open file\n");
+                        printf("wunzip: cannot open file\n");
                         exit(1);
                 }
 
@@ -41,8 +41,15 @@ int main(int argc, char *argv[])
 			while((bytesRead = fread(&count, sizeof(int), 1, fp)) >0)
 			{
         			char c = fgetc(fp);
-        			printf("%d", count);
-				printf("%c", c);
+        			//printf("%d", count);
+
+				int i;
+				for(i = 0; i<count; i++)
+				{
+
+					printf("%c", c);
+				} 
+				//printf("%c", c);
 
 				//c = fgetc()
 			}
